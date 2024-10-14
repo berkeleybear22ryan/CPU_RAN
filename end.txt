@@ -1,0 +1,2 @@
+Cycle:        765
+[       765 sim. cycles] CSR test PASSED!

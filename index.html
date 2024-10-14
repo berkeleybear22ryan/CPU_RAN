@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CPU RAN</title>
+  <!-- Link to the CSS stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Main container for the editor -->
+  <div class="editor-container">
+    <!-- Editor Header -->
+    <div class="editor-header">
+      <span id="program-title">assembly_code.txt — CPU</span>
+    </div>
+    <!-- Editor Body -->
+    <div class="editor-body">
+      <!-- Line Numbers -->
+      <div class="line-numbers" id="line-numbers"></div>
+      <!-- Code Lines -->
+      <div class="code-lines" id="code-lines"></div>
+    </div>
+    <!-- Controls -->
+    <div class="controls">
+      <label for="program-select">Program:</label>
+      <select id="program-select"></select>
+      <button id="prev-cycle">Previous</button>
+      <button id="play-pause">Pause</button>
+      <button id="next-cycle">Next</button>
+      <span id="cycle-display">Cycle: 0</span>
+      <label for="cps-input">Speed (Cycles/sec):</label>
+      <input type="number" id="cps-input" value="5" min="1" max="1000">
+    </div>
+  </div>
+  <!-- Link to the JavaScript file -->
+  <script src="script.js"></script>
+</body>
+</html>

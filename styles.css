@@ -1,0 +1,220 @@
+/* Root Variables */
+:root {
+  --background-color: #292929; /* Dark background */
+  --foreground-color: #d4d4d4; /* Light text */
+  --line-number-color: #858585;
+  --hit-count-color: rgba(159, 159, 159, 0.75); /* Blue color */
+  --stage0-color: rgba(0, 12, 59, 0.8);
+  --stage1-color: rgba(59, 0, 6, 0.8);
+  --stage2-color: rgba(19, 59, 0, 0.8);
+  --stage3-color: rgba(0, 59, 54, 0.8);
+  --unhit-color: #555555;
+  --font-size: 14px;
+  --font-family: 'Consolas', 'Courier New', monospace;
+  --border-radius: 4px;
+  --histogram-color: rgba(0, 0, 0, 0.52); /* Color for the histogram bars */
+  --histogram-max-width: 100px; /* Maximum width for the histogram bars */
+}
+
+/* Reset Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styles */
+body, html {
+  height: 100%;
+  background-color: var(--background-color);
+  color: var(--foreground-color);
+  font-family: var(--font-family);
+  overflow: hidden;
+}
+
+/* Editor Container */
+.editor-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Editor Header */
+.editor-header {
+  background-color: #252526;
+  padding: 10px;
+  color: var(--foreground-color);
+  font-size: var(--font-size);
+  border-bottom: 1px solid #3c3c3c;
+}
+
+/* Editor Body */
+.editor-body {
+  flex-grow: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+ /*Line Numbers*/
+.line-numbers {
+  background-color: #2d2d2d;
+  padding: 10px 5px;
+  color: #2d2d2d;
+  text-align: right;
+  user-select: none;
+  border-right: 1px solid #3c3c3c;
+}
+
+.line-number {
+  display: block;
+  height: 20px;
+  line-height: 20px;
+}
+
+/* Code Lines */
+.code-lines {
+  background-color: var(--background-color);
+  padding: 10px;
+  flex-grow: 1;
+  overflow: auto;
+}
+
+.code-line {
+  position: relative;
+  min-height: 20px;
+  line-height: 20px;
+  padding-left: 5px;
+  border-radius: var(--border-radius);
+  display: flex;
+  align-items: center;
+}
+
+.code-line .instruction {
+  color: var(--foreground-color);
+  margin-right: 10px;
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+.code-line .histogram-bar {
+  height: 10px;
+  margin-right: 10px;
+  background-color: var(--histogram-color);
+  border-radius: 2px;
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+.code-line .stage-label {
+  margin-right: 10px;
+  color: #ffffff;
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+.code-line .mux-data {
+  margin-right: 10px;
+  color: #ff4900;
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+.code-line .hit-count {
+  margin-left: auto;
+  color: var(--hit-count-color);
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+/* Stage Highlights with Rounded Corners */
+.stage-0 {
+  background-color: var(--stage0-color);
+  border-radius: var(--border-radius);
+}
+
+.stage-1 {
+  background-color: var(--stage1-color);
+  border-radius: var(--border-radius);
+}
+
+.stage-2 {
+  background-color: var(--stage2-color);
+  border-radius: var(--border-radius);
+}
+
+.stage-3 {
+  background-color: var(--stage3-color);
+  border-radius: var(--border-radius);
+}
+
+.unhit .instruction {
+  color: var(--unhit-color);
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #252526;
+  border-top: 1px solid #3c3c3c;
+}
+
+.controls label {
+  margin-right: 5px;
+}
+
+.controls select {
+  margin-right: 15px;
+  padding: 5px;
+  background-color: #1e1e1e;
+  color: var(--foreground-color);
+  border: 1px solid #3c3c3c;
+  border-radius: var(--border-radius);
+}
+
+.controls button {
+  margin-right: 10px;
+  padding: 5px 10px;
+  background-color: #3c3c3c;
+  color: var(--foreground-color);
+  border: none;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+}
+
+.controls button:hover {
+  background-color: #505050;
+}
+
+.controls input {
+  width: 60px;
+  margin-left: 5px;
+  padding: 2px;
+  background-color: #1e1e1e;
+  color: var(--foreground-color);
+  border: 1px solid #3c3c3c;
+  border-radius: var(--border-radius);
+}
+
+.controls span {
+  margin-left: auto;
+}
+
+/* Scrollbar Styling */
+.code-lines::-webkit-scrollbar {
+  width: 10px;
+}
+
+.code-lines::-webkit-scrollbar-track {
+  background: #2d2d2d;
+}
+
+.code-lines::-webkit-scrollbar-thumb {
+  background: #555555;
+  border-radius: var(--border-radius);
+}
+
+.code-lines::-webkit-scrollbar-thumb:hover {
+  background: #7a7a7a;
+}
+
+/* Text Selection */
+::selection {
+  background-color: rgba(86, 156, 214, 0.3);
+}
