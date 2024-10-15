@@ -191,7 +191,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function updateCycleDisplay() {
-    cycleDisplay.textContent = `Cycle: ${currentCycle}`;
+    cycleDisplay.textContent = `|Current Cycle: ${currentCycle}  |  Total Cycles: ${cycleData.length}   | Progress: ${Math.round((currentCycle / cycleData.length) * 100)}% |......`;
+    // cycleDisplay.textContent = `Current Cycle: ${currentCycle}...Total Cycles: ${cycleData.length}...Progress: ${Math.round((currentCycle/cycleData.length)*100)}%...`;
     updatePipelineStages();
     updateInstructionHits();
     updateHistogram(); // Update histogram after hits are updated

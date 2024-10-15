@@ -87,6 +87,7 @@ body, html {
   border-radius: var(--border-radius);
   display: flex;
   align-items: center;
+  font-size: 10px;
 }
 
 .code-line .instruction {
@@ -111,8 +112,10 @@ body, html {
 
 .code-line .mux-data {
   margin-right: 10px;
-  color: #ff4900;
+  color: #ffffff;
   flex-shrink: 0; /* Prevent shrinking */
+  background-color: rgba(0, 0, 0, 0.28);
+  border-radius: var(--border-radius);
 }
 
 .code-line .hit-count {
@@ -213,6 +216,12 @@ body, html {
 .code-lines::-webkit-scrollbar-thumb:hover {
   background: #7a7a7a;
 }
+
+
+#cycle-display {
+  font-size: 10px; /* Change to desired font size */
+}
+
 
 /* Text Selection */
 ::selection {
